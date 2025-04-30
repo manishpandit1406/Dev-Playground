@@ -8,32 +8,50 @@ function runCode() {
   }
   
   function saveProject() {
-  const html = document.getElementById("htmlCode").value;
-  const css = document.getElementById("cssCode").value;
-  const js = document.getElementById("jsCode").value;
-
-  const name = prompt("Enter a name for your project:");
-  if (!name) return;
-
-  const project = { html, css, js };
-  localStorage.setItem(name, JSON.stringify(project));
-
-  // 💾 Also download as ZIP
-  const zip = new JSZip();
-  zip.file("index.html", html);
-  zip.file("style.css", css);
-  zip.file("script.js", js);
-
-  zip.generateAsync({ type: "blob" }).then((content) => {
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(content);
-    a.download = `${name}.zip`;
-    a.click();
-  });
-
-  alert("Project saved and downloaded as ZIP!");
-  loadProjects?.(); // Optional: reload project list if on main page
-}
+    const name = prompt("Enter project name:");
+    if (!name) return alert("Please enter a valid name.");
+  
+    const html = document.getElementById("htmlCode").value;
+    const css = document.getElementById("cssCode").value;
+    const js = document.getElementById("jsCode").value;
+  
+    const project = { html, css, js };
+    try {
+      localStorage.setItem(name, JSON.stringify(project));
+      alert("✅ Project saved as: " + name);
+    } catch (e) {
+      alert("❌ Failed to save project: " + e.message);
+    }
+  }
+  
+  function downloadZip() {
+    const html = document.getElementById("htmlCode").value;
+    const css = document.getElementById("cssCode").value;
+    const js = document.getElementById("jsCode").value;
+  
+    if (!html && !css && !js) {
+      alert("❌ Cannot download empty project.");
+      return;
+    }
+  
+    const zip = new JSZip();
+    zip.file("index.html", html || "");
+    zip.file("style.css", css || "");
+    zip.file("script.js", js || "");
+  
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(content);
+      a.download = "project.zip";
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }).catch((err) => {
+      alert("❌ ZIP creation failed: " + err.message);
+    });
+  }
+  
 
   
   function loadProjects() {
