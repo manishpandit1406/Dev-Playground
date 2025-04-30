@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Canva - Project Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🧠 Code Canva</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="projects.html">View Saved Projects</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="editor-section">
+      <h1>Live Code Editor</h1>
+
+      <div class="editor-container">
+        <div class="editor">
+          <h2>HTML</h2>
+          <textarea id="htmlCode" placeholder="Write HTML here..."></textarea>
+        </div>
+        <div class="editor">
+          <h2>CSS</h2>
+          <textarea id="cssCode" placeholder="Write CSS here..."></textarea>
+        </div>
+        <div class="editor">
+          <h2>JavaScript</h2>
+          <textarea id="jsCode" placeholder="Write JS here..."></textarea>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="runCode()">▶ Run</button>
+        <button onclick="saveProject()">💾 Save</button>
+      </div>
+
+      <iframe id="output" class="fade-in"></iframe>
+    </section>
+
+    
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Code Canva. Built with ❤️ by Manish</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
