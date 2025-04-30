@@ -8,21 +8,30 @@ function runCode() {
   }
   
   function saveProject() {
-    const name = prompt("Enter project name:");
-    if (!name) return alert("Please enter a valid name.");
+    const projectName = localStorage.getItem("editProjectName");
   
     const html = document.getElementById("htmlCode").value;
     const css = document.getElementById("cssCode").value;
     const js = document.getElementById("jsCode").value;
   
     const project = { html, css, js };
+  
+    let name = projectName;
+    if (!name) {
+      name = prompt("Enter project name:");
+      if (!name) return alert("⚠️ Project name required.");
+    }
+  
     try {
       localStorage.setItem(name, JSON.stringify(project));
-      alert("✅ Project saved as: " + name);
+      localStorage.setItem("editProject", JSON.stringify(project));
+      localStorage.setItem("editProjectName", name);
+      alert(`✅ Project saved: ${name}`);
     } catch (e) {
       alert("❌ Failed to save project: " + e.message);
     }
   }
+  
   
   function downloadZip() {
     const html = document.getElementById("htmlCode").value;
@@ -149,3 +158,118 @@ window.onload = function () {
 };
 
 
+window.onload = function () {
+    const projectRaw = localStorage.getItem("editProject");
+    const projectName = localStorage.getItem("editProjectName");
+  
+    if (projectRaw && projectName) {
+      try {
+        const project = JSON.parse(projectRaw);
+        document.getElementById("htmlCode").value = project.html || "";
+        document.getElementById("cssCode").value = project.css || "";
+        document.getElementById("jsCode").value = project.js || "";
+        document.getElementById("projectNameDisplay").innerText = `📂 ${projectName.toUpperCase()}`;
+      } catch (err) {
+        console.error("❌ Failed to load project:", err);
+      }
+    }
+  };
+  
+  // Clear edit project session  
+  
+
+  function clearEditSession() {
+    localStorage.removeItem("editProject");
+    localStorage.removeItem("editProjectName");
+  }
+  
+
+  function startNewProject() {
+    localStorage.removeItem("editProject");
+    localStorage.removeItem("editProjectName");
+    document.getElementById("htmlCode").value = "";
+    document.getElementById("cssCode").value = "";
+    document.getElementById("jsCode").value = "";
+    document.getElementById("projectNameDisplay").innerText = " ";
+  }
+  
+  function openProject() {
+    const projectNames = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      // Skip editor metadata keys
+      if (key === "editProject" || key === "editProjectName") continue;
+      projectNames.push(key);
+    }
+
+    if (projectNames.length === 0) {
+      alert("⚠️ No saved projects found.");
+      return;
+    }
+
+    const name = prompt(
+      "Enter the project name to open:\n\n" + projectNames.join("\n")
+    );
+
+    if (!name || !localStorage.getItem(name)) {
+      alert("❌ Project not found.");
+      return;
+    }
+
+    const projectRaw = localStorage.getItem(name);
+    try {
+      const project = JSON.parse(projectRaw);
+      document.getElementById("htmlCode").value = project.html || "";
+      document.getElementById("cssCode").value = project.css || "";
+      document.getElementById("jsCode").value = project.js || "";
+      document.getElementById("projectNameDisplay").innerText =
+        "📂 " + name.toUpperCase();
+
+      // Save edit session for persistence
+      localStorage.setItem("editProject", projectRaw);
+      localStorage.setItem("editProjectName", name);
+    } catch (e) {
+      alert("❌ Failed to load project.");
+    }
+  }
+
+
+  function loadMultipleFiles() {
+    const files = document.getElementById("multiFileInput").files;
+    let html = "", css = "", js = "";
+
+    for (let file of files) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const content = e.target.result;
+
+        if (file.name.endsWith(".html")) html = content;
+        else if (file.name.endsWith(".css")) css = content;
+        else if (file.name.endsWith(".js")) js = content;
+
+        // Once all files loaded, populate editors
+        if (file === files[files.length - 1]) {
+          document.getElementById("htmlCode").value = html;
+          document.getElementById("cssCode").value = css;
+          document.getElementById("jsCode").value = js;
+
+          const projectName = prompt("Enter a name to save this project:", "multi-file-project");
+          if (projectName) {
+            const project = { html, css, js };
+            localStorage.setItem(projectName, JSON.stringify(project));
+            localStorage.setItem("editProject", JSON.stringify(project));
+            localStorage.setItem("editProjectName", projectName);
+            document.getElementById("projectNameDisplay").innerText = "📂 " + projectName.toUpperCase();
+            alert("✅ Project loaded and saved!");
+          }
+        }
+      };
+
+      reader.readAsText(file);
+    }
+  }
+
+
+  

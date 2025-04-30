@@ -31,6 +31,7 @@
   .logo {
     font-size: 24px;
     font-weight: bold;
+    margin-left:50px ;
   }
   
   nav a {
@@ -144,7 +145,7 @@
     font-weight: bold;
     color: #00ffc8;
     font-size: 1.4rem;
-    text-shadow: 0 0 5px #00ffc8;
+    
     margin-bottom: 10px;
     text-transform: uppercase;
   }
@@ -190,6 +191,4 @@
       height: 40vh; /* Reduce height on smaller screens */
     }
   }
-  
-
   

@@ -13,10 +13,11 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">🧠 Code Canva</div>
+    <div class="logo">💻 Code Canva</div>
     <nav>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="projects.html">View Saved Projects</a>
+      <a href="guidence.html">Guide</a>
       <a href="#">About</a>
     </nav>
   </header>
@@ -25,6 +26,9 @@
   <main>
     <section class="editor-section">
       <h1>Live Code Editor</h1>
+
+      <h2 id="projectNameDisplay" style="color:#00bcd4; text-align:center;"></h2>
+
 
       <div class="editor-container">
         <div class="editor">
@@ -43,11 +47,21 @@
 
       <div class="buttons">
         <button onclick="runCode()">▶ Run</button>
+        <input type="file" id="multiFileInput" accept=".html,.css,.js" multiple style="display: none" onchange="loadMultipleFiles()" />
+<button onclick="document.getElementById('multiFileInput').click()">📂 Open Files</button>
+
+
+
+
         <button onclick="saveProject()">✅ Save Project</button>
+        <button onclick="openProject()" title="Open a saved project">📂 Open Project</button>
+
 <button onclick="downloadZip()">📦 Download ZIP</button>
+<button onclick="startNewProject()">🔄 Reload</button>
+
 
       </div>
-
+      <h2>Output</h2>
       <iframe id="output" class="fade-in"></iframe>
     </section>
 

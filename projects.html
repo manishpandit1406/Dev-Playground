@@ -41,11 +41,11 @@
       color: #00ffcc;
     }
 
-    button:nth-child(5) {
+    button:nth-child(6) {
   background-color: #b30000;
 }
 
-button:nth-child(5):hover {
+button:nth-child(6):hover {
   background-color: #e60000;
 }
 
@@ -53,7 +53,7 @@ button:nth-child(5):hover {
   font-weight: bold;
   color: #00ffc8;
   font-size: 1.4rem;
-  text-shadow: 0 0 5px #00ffc8;
+  
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -76,6 +76,7 @@ button:nth-child(5):hover {
         <nav>
           <a href="index.html">Home</a>
           <a href="projects.html">View Saved Projects</a>
+          <a href="guidence.html">Guide</a>
           <a href="#">About</a>
         </nav>
       </header>
@@ -101,6 +102,7 @@ button:nth-child(5):hover {
       container.innerHTML = "";
 
       for (let i = 0; i < localStorage.length; i++) {
+        
         const name = localStorage.key(i);
         const project = JSON.parse(localStorage.getItem(name));
         if (!project || typeof project !== "object") continue;
@@ -112,6 +114,7 @@ button:nth-child(5):hover {
   <h3 class="project-title">${name}</h3>
   <button onclick="previewProject('${name}')">👁️ Preview</button>
   <button onclick="toggleCode('${name}')">📄 Show Code</button>
+  <button onclick="editCode('${name}')">✏️ Edit Code</button>
   <button onclick="downloadProject('${name}')">⬇️ Download ZIP</button>
   <button onclick="deleteProject('${name}')">🗑️ Delete</button>
 
@@ -126,9 +129,12 @@ button:nth-child(5):hover {
     <pre>${escapeHTML(project.js)}</pre>
   </div>
 `;
+
         container.appendChild(div);
       }
     }
+
+    
 
     function previewProject(name) {
       const project = JSON.parse(localStorage.getItem(name));
@@ -189,6 +195,18 @@ function deleteProject(name) {
     loadProjects(); // Refresh project list
   }
 }
+
+function editCode(name) {
+  const raw = localStorage.getItem(name);
+  if (!raw) return alert("❌ Project not found!");
+
+  localStorage.setItem("editProject", raw);
+  localStorage.setItem("editProjectName", name);
+  window.location.href = "index.html";
+}
+
+
+
 
 
 
