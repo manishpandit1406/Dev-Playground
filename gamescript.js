@@ -491,31 +491,32 @@ let currentMode = '';
 let currentLevel = 0;
 let score = 0;
 
-// Load saved progress from localStorage if available
-function loadSavedProgress() {
-  const savedMode = localStorage.getItem('currentMode');
-  const savedLevel = parseInt(localStorage.getItem('currentLevel'), 10);
-  const savedScore = parseInt(localStorage.getItem('score'), 10);
-
-  if (savedMode && savedLevel >= 0 && savedLevel < levels[savedMode].length) {
-    currentMode = savedMode;
-    currentLevel = savedLevel;
-    score = savedScore || 0;
+// Load saved progress for a mode
+function loadProgress(mode) {
+  const savedData = JSON.parse(localStorage.getItem(`progress_${mode}`));
+  if (savedData) {
+    return {
+      level: savedData.level,
+      score: savedData.score
+    };
   }
+  return { level: 0, score: 0 };
 }
 
-// Save progress to localStorage
-function saveProgress() {
-  localStorage.setItem('currentMode', currentMode);
-  localStorage.setItem('currentLevel', currentLevel);
-  localStorage.setItem('score', score);
+// Save progress for a mode
+function saveProgress(mode, level, score) {
+  localStorage.setItem(`progress_${mode}`, JSON.stringify({
+    level: level,
+    score: score
+  }));
 }
 
 function startGame(mode) {
   currentMode = mode;
-  currentLevel = 0;
-  score = 0;
-  localStorage.removeItem('currentMode');  // Reset saved progress when starting a new mode
+  const progress = loadProgress(mode);
+  currentLevel = progress.level;
+  score = progress.score;
+
   document.getElementById('game-area').classList.remove('hidden');
   document.getElementById('total-levels').textContent = levels[mode].length;
   loadLevel();
@@ -546,10 +547,11 @@ function checkAnswer() {
     if (currentMode === 'html') {
       document.getElementById('live-preview').innerHTML = userCode;
     }
-    score += 2;  // Add 2 points for completing a level
-    saveProgress();  // Save progress after every correct answer
 
+    score += 2;
     currentLevel++;
+    saveProgress(currentMode, currentLevel, score);
+
     if (currentLevel < levels[currentMode].length) {
       setTimeout(loadLevel, 1500);
     } else {
@@ -562,27 +564,26 @@ function checkAnswer() {
 }
 
 function retryLevel() {
-  // Reset the level and allow the user to retry
   document.getElementById('answer').value = '';
   document.getElementById('feedback').textContent = '';
   document.getElementById('retry-button').classList.add('hidden');
 }
 
 function resetGame() {
-  // Clear localStorage and reset all variables
-  localStorage.clear();
-  score = 0;
+  ['html', 'css', 'js'].forEach(mode => localStorage.removeItem(`progress_${mode}`));
+  currentMode = '';
   currentLevel = 0;
-  document.getElementById('score').textContent = `Score: ${score}`;
+  score = 0;
   document.getElementById('game-area').classList.add('hidden');
   document.querySelector('.mode-selector').style.display = 'block';
 }
 
-// Check for saved progress when the page loads
+
 window.onload = function() {
-  loadSavedProgress();
-  if (currentMode && currentLevel < levels[currentMode].length) {
-    document.getElementById('game-area').classList.remove('hidden');
-    loadLevel();
-  }
-}
+  document.querySelectorAll('.mode-selector button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('onclick').match(/startGame\('(\w+)'\)/)[1];
+      startGame(mode);
+    });
+  });
+};
