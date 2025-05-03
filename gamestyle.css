@@ -101,3 +101,18 @@ textarea {
   margin-top: 1rem;
   font-weight: bold;
 }
+
+
+.space {
+  padding: 171px;
+}
+
+footer {
+  margin-top: auto;
+  background: #1a1a1a;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: #888;
+  border-top: 1px solid #333;
+}

@@ -150,7 +150,9 @@
     text-transform: uppercase;
   }
   
-  
+  .space {
+    padding: 171px;
+  }
   
   footer {
     margin-top: auto;
