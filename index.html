@@ -2,78 +2,229 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Code Canva - Project Viewer</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevPlayground</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="logo-removebg.png" type="image/x-icon">
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      line-height: 1.6;
+    }
+  
+    .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 520px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 255, 213, 0.2);
+}
+
+.feature-box {
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: inset 0 0 0 2px #333;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0 0 0 2px #00ffd5;
+}
+
+.feature-box img {
+    width: 120px;
+    height: auto;
+  margin-bottom: 10px;
+}
+
+.feature-box span {
+  display: block;
+  font-size: 16px;
+  margin-top: 5px;
+}
 
 
+    /* footer style */
+  .footer {
+  background: #111;
+  color: #ccc;
+  padding: 40px 20px 10px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 2px solid #00ffd5;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer .socials a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer .socials a:hover {
+  color: #1da1f2;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-logo img {
+  width: 170px;         /* or use % for responsiveness */
+  height: auto;
+  margin-top: 0px;
+  border-radius: 8px;   /* optional: rounded edges */
+  border: 1px solid #333;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
+
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">💻 Code Canva</div>
+    <div class="logo">
+      <img src="logo-removebg.png" alt="Logo" class="logo-img">
+      <span>DevPlayground</span>
+    </div>
     <nav>
-      <a href="index.html" target="_blank">Home</a>
-      <a href="game.html" target="_blank">Code Adventure</a>
+      <a href="index.html">Home</a>
+      <a href="code-canva.html">Code Canva</a>
+      <a href="game.html">Code Adventure</a>
+      <a href="#">Learn Code</a>
       <a href="projects.html">View Saved Projects</a>
-      <a href="guidence.html" target="_blank">Guide</a>
-      <a href="#">About</a>
+      <a href="guidence.html" target="_blank">User Guide</a>
     </nav>
   </header>
+  
 
-  <!-- Main Content -->
-  <main>
-    <section class="editor-section">
-      <h1>Live Code Editor</h1>
+  <div class="feature-grid">
+    <a href="code-canva.html">
+    <div class="feature-box" onclick="handleClick('Code')">
+      <img src="codeicon.png" alt="Code Icon">
+      <span>Code Canva</span>
+    </div>
+  </a>
+    <a href="#">
+    <div class="feature-box" onclick="handleClick('Design')">
+      <img src="codelearn.png" alt="Design Icon">
+      <span>Learn Code</span>
+    </div>
+  </a>
+    <a href="game.html">
+    <div class="feature-box" onclick="handleClick('Game')">
+      <img src="gameicon.png" alt="Game Icon">
+      <span>Code Adventure</span>
+    </div>
+  </a>
+    <a href="projects.html">
+    <div class="feature-box" onclick="handleClick('Blocks')">
+      <img src="saved.png" alt="Grid Icon">
+      <span>Saved Projects</span>
+    </div>
+  </a>
+  </div>
+  
 
-      <h2 id="projectNameDisplay" style="color:#00bcd4; text-align:center;"></h2>
-
-
-      <div class="editor-container">
-        <div class="editor">
-          <h2>HTML</h2>
-          <textarea id="htmlCode" placeholder="Write HTML here..."></textarea>
-        </div>
-        <div class="editor">
-          <h2>CSS</h2>
-          <textarea id="cssCode" placeholder="Write CSS here..."></textarea>
-        </div>
-        <div class="editor">
-          <h2>JavaScript</h2>
-          <textarea id="jsCode" placeholder="Write JS here..."></textarea>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>DevPlayground</h2>
+        <div class="footer-logo">
+          <img src="logo-removebg.png" alt="EduFreelance Logo">
         </div>
       </div>
-
-      <div class="buttons">
-        <button onclick="runCode()">▶ Run</button>
-        <input type="file" id="multiFileInput" accept=".html,.css,.js" multiple style="display: none" onchange="loadMultipleFiles()" />
-<button onclick="document.getElementById('multiFileInput').click()">📂 Open Files</button>
-
-
-
-
-        <button onclick="saveProject()">✅ Save Project</button>
-        <button onclick="openProject()" title="Open a saved project">📂 Open Project</button>
-
-<button onclick="downloadZip()">📦 Download ZIP</button>
-<button onclick="startNewProject()">🔄 Reload</button>
-
-
+  
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="code-canva.html">Code Canva</a></li>
+          <li><a href="#">Learn Code</a></li>
+          <li><a href="projects.html">Saved Projects</a></li>
+          <li><a href="game.html">Code Adventure</a></li>
+          <li><a href="guidence.html">User Guide</a></li>
+        </ul>
       </div>
-      <h2>Output</h2>
-      <iframe id="output" class="fade-in"></iframe>
-    </section>
-
-    
-  </main>
-
-
-  <footer>
-    <p>&copy; 2025 Code Canva. Built with ❤️ by Manish</p>
+  
+      <div class="footer-section contact">
+        <h2>Contact</h2>
+        <p>Email: work.manishpandit1406@gmail.com</p>
+        <p>Phone: +91 997****022</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> DevPlayground. All rights reserved.</p>
+    </div>
   </footer>
-
-  <script src="script.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

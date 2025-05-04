@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevPlayground - Code Canva</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="logo-removebg.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo-removebg.png" alt="Logo" class="logo-img">
+      <span>DevPlayground</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="code-canva.html">Code Canva</a>
+      <a href="game.html">Code Adventure</a>
+      <a href="#">Learn Code</a>
+      <a href="projects.html">View Saved Projects</a>
+      <a href="guidence.html" target="_blank">User Guide</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="editor-section">
+      <div class="logo-editor">Code Canva <b>(Live Code Editor)</b></div>
+
+      <h2 id="projectNameDisplay" style="color:#00bcd4; text-align:center;"></h2>
+
+
+      <div class="editor-container">
+        <div class="editor">
+          <h2>HTML</h2>
+          <textarea id="htmlCode" placeholder="Write HTML here..."></textarea>
+        </div>
+        <div class="editor">
+          <h2>CSS</h2>
+          <textarea id="cssCode" placeholder="Write CSS here..."></textarea>
+        </div>
+        <div class="editor">
+          <h2>JavaScript</h2>
+          <textarea id="jsCode" placeholder="Write JS here..."></textarea>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="runCode()">▶ Run</button>
+        <input type="file" id="multiFileInput" accept=".html,.css,.js" multiple style="display: none" onchange="loadMultipleFiles()" />
+<button onclick="document.getElementById('multiFileInput').click()">📂 Open Files</button>
+
+
+
+
+        <button onclick="saveProject()">✅ Save Project</button>
+        <button onclick="openProject()" title="Open a saved project">📂 Open Project</button>
+
+<button onclick="downloadZip()">📦 Download ZIP</button>
+<button onclick="startNewProject()">🔄 Reload</button>
+
+
+      </div>
+      <h2>Output</h2>
+      <iframe id="output" class="fade-in"></iframe>
+    </section>
+
+    
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>DevPlayground</h2>
+        <div class="footer-logo">
+          <img src="logo-removebg.png" alt="EduFreelance Logo">
+        </div>
+      </div>
+  
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="code-canva.html">Code Canva</a></li>
+          <li><a href="#">Learn Code</a></li>
+          <li><a href="projects.html">Saved Projects</a></li>
+          <li><a href="game.html">Code Adventure</a></li>
+          <li><a href="guidence.html">User Guide</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section contact">
+        <h2>Contact</h2>
+        <p>Email: info@DevPlayground.com</p>
+        <p>Phone: +91 997****022</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> DevPlayground. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

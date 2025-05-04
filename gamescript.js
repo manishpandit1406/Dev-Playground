@@ -124,6 +124,170 @@ const levels = {
     question: "Complete this HTML tag for the footer of a document or section:\n<____>\n  <p>&copy; 2023 My Website</p>\n</footer>",
     answer: "<footer>\n  <p>&copy; 2023 My Website</p>\n</footer>"
   },
+  {
+    question: "Complete this HTML tag for embedding an external webpage:\n<iframe ____=\"https://www.example.com\"></iframe>",
+    answer: "<iframe src=\"https://www.example.com\"></iframe>"
+  },
+  {
+    question: "What is the purpose of the `<base>` tag in HTML, and where is it typically used?",
+    answer: "Specifies a base URL for all relative URLs in a document.  It's used within the `<head>` element."
+  },
+  {
+    question: "Complete this HTML tag for grouping options in a dropdown:\n<select>\n  <____ label=\"Group 1\">\n    <option>Option 1</option>\n    <option>Option 2</option>\n  </____>\n</select>",
+    answer: "<select>\n  <optgroup label=\"Group 1\">\n    <option>Option 1</option>\n    <option>Option 2</option>\n  </optgroup>\n</select>"
+  },
+  {
+    question: "What is the HTML tag used to define a hyperlink?",
+    answer: "The `<a>` tag (anchor tag)."
+  },
+  {
+    question: "Complete this HTML tag for indicating an abbreviation:\n<abbr ____=\"Hypertext Markup Language\">HTML</abbr>",
+    answer: "<abbr title=\"Hypertext Markup Language\">HTML</abbr>"
+  },
+  {
+    question: "Complete this HTML tag to embed a video:\n<video ____ controls></video>",
+    answer: "<video src controls></video>"
+  },
+  {
+    question: "What attribute is used to specify the character encoding of an HTML document?",
+    answer: "charset"
+  },
+  {
+    question: "Fill in the blank for an HTML element that represents a standalone piece of content:\n<____>\n  <p>This is an article.</p>\n</____>",
+    answer: "<article>\n  <p>This is an article.</p>\n</article>"
+  },
+  {
+    question: "What HTML tag is used to define a set of navigation links?",
+    answer: "The `<nav>` tag."
+  },
+  {
+    question: "Complete this HTML tag for a footer section:\n<____>\n  <p>Footer content</p>\n</____>",
+    answer: "<footer>\n  <p>Footer content</p>\n</footer>"
+  },
+   {
+    question: "Complete this HTML tag for embedding audio:\n<audio ____ controls></audio>",
+    answer: "<audio src controls></audio>"
+  },
+  {
+    question: "What attribute in the `form` tag specifies where to send the form data?",
+    answer: "action"
+  },
+  {
+    question: "Fill in the blank for an HTML element that represents a header for a section:\n<____>\n  <h1>Heading</h1>\n</____>",
+    answer: "<header>\n  <h1>Heading</h1>\n</header>"
+  },
+  {
+    question: "What HTML tag is used to define a sidebar?",
+    answer: "The `<aside>` tag"
+  },
+  {
+    question: "Complete this HTML tag for a figure with a caption:\n<figure>\n  <img>\n  <____>Caption</figcaption>\n</figure>",
+    answer: "<figure>\n  <img>\n  <figcaption>Caption</figcaption>\n</figure>"
+  },
+  {
+    question: "Complete this HTML tag for a data list:\n<label for=\"browser\">Choose a browser from this list:</label>\n<input list=\"browsers\" name=\"browser\" id=\"browser\">\n<____ id=\"browsers\">\n  <option value=\"Chrome\">\n  <option value=\"Firefox\">\n</datalist>",
+    answer: "<label for=\"browser\">Choose a browser from this list:</label>\n<input list=\"browsers\" name=\"browser\" id=\"browser\">\n<datalist id=\"browsers\">\n  <option value=\"Chrome\">\n  <option value=\"Firefox\">\n</datalist>"
+  },
+  {
+    question: "What attribute is used to specify that an input field must be filled out?",
+    answer: "required"
+  },
+  {
+    question: "Fill in the blank for an HTML element that represents the main content of a document:\n<____>\n  <p>Main content here</p>\n</____>",
+    answer: "<main>\n  <p>Main content here</p>\n</main>"
+  },
+  {
+    question: "What HTML tag is used to define a section of content that is related to the main content?",
+    answer: "The `<aside>` tag."
+  },
+  {
+    question: "Complete this HTML tag for marking up a quotation:\n<____ cite=\"https://www.example.com\">\n  <p>This is a quotation.</p>\n</____>",
+    answer: "<blockquote cite=\"https://www.example.com\">\n  <p>This is a quotation.</p>\n</blockquote>"
+  },
+  {
+    question: "Complete this HTML tag for defining a section in a form:\n<____>\n</____>",
+    answer: "<section>\n</section>"
+  },
+  {
+    question: "What attribute is used to specify the type of media resource linked by the <link> tag?",
+    answer: "media"
+  },
+  {
+    question: "Fill in the blank for an HTML element that represents a dialog box or window:\n<____>\n</____>",
+    answer: "<dialog>\n</dialog>"
+  },
+  {
+    question: "What HTML tag is used to define the result of a calculation?",
+    answer: "The `<output>` tag"
+  },
+  {
+    question: "Complete this HTML tag for specifying multiple possible resources for an image:\n<picture>\n  <source media=\"(min-width: 650px)\" srcset=\"large.jpg\">\n  <source media=\"(min-width: 465px)\" srcset=\"medium.jpg\">\n  <img src=\"small.jpg\">\n</picture>",
+    answer: "<picture>\n  <source media=\"(min-width: 650px)\" srcset=\"large.jpg\">\n  <source media=\"(min-width: 465px)\" srcset=\"large.jpg\">\n  <img src=\"small.jpg\">\n</picture>"
+  },
+  {
+    question: "Complete this HTML tag for interactive content:\n<____>\n</____>",
+    answer: "<details>\n</details>"
+  },
+  {
+    question: "What attribute on a script tag tells the browser to execute it as soon as it is downloaded?",
+    answer: "async"
+  },
+  {
+    question: "Fill in the blank for an HTML element that represents the result of a user action:\n<____>\n</____>",
+    answer: "<output>\n</output>"
+  },
+  {
+    question: "What HTML tag is used to define a mathematical formula?",
+    answer: "The `<math>` tag"
+  },
+  {
+    question: "Complete this HTML tag for embedded vector graphics:\n<____>\n</____>",
+    answer: "<svg>\n</svg>"
+  },
+  {
+        question: "Complete this HTML tag for document metadata:\n<____>\n</____>",
+        answer: "<meta>\n</meta>"
+    },
+    {
+        question: "What attribute is used to specify the relationship between the current document and the linked resource?",
+        answer: "rel"
+    },
+    {
+        question: "Fill in the blank for an HTML element that represents a generic container with no special meaning:\n<____>\n</____>",
+        answer: "<div>\n</div>"
+    },
+    {
+        question: "What HTML tag is used to define a caption for a table?",
+        answer: "<caption>"
+    },
+    {
+        question: "Complete this HTML tag for interactive content, that the user can open and close:\n<____>\n</____>",
+        answer: "<details>\n</details>"
+    },
+    {
+    question: "Complete this HTML tag for grouping form elements:\n<____>\n</____>",
+    answer: "<fieldset>\n</fieldset>"
+  },
+  {
+    question: "What attribute is used to specify a regular expression for validating an input field?",
+    answer: "pattern"
+  },
+  {
+    question: "Fill in the blank for an HTML element that represents a section of a page that links to other pages:\n<____>\n</____>",
+    answer: "<nav>\n</nav>"
+  },
+  {
+    question: "What HTML tag is used to define a description list?",
+    answer: "The `<dl>` tag"
+  },
+  {
+    question: "Complete this HTML tag for indicating program output:\n<____>\n</____>",
+    answer: "<samp>\n</samp>"
+  },
+  {
+    question: "Complete this HTML tag for defining a section in a form:\n<____>\n</____>",
+    answer: "<section>\n</section>"
+  }
   ],
   css: [
     {
@@ -151,11 +315,11 @@ const levels = {
       answer: "font-size: 16px;"
     },
     {
-      question: "Complete the CSS property for margin:\nmargin-____: 10px;",
+      question: "Complete the CSS property for top margin:\nmargin-____: 10px;",
       answer: "margin-top: 10px;"
     },
     {
-      question: "Complete the CSS property for padding:\npadding-____: 20px;",
+      question: "Complete the CSS property for left padding:\npadding-____: 20px;",
       answer: "padding-left: 20px;"
     },
      {
@@ -290,6 +454,190 @@ const levels = {
     question: "Complete the CSS selector for the first child of a `ul` element:\nul > li:____-child {  /* styles */ }",
     answer: "ul > li:first-child {  /* styles */ }"
   },
+  {
+    question: "Fill in the blank to select all even-numbered rows in a table:\ntr:____ { background-color: #f2f2f2; }",
+    answer: "tr:nth-child(even) { background-color: #f2f2f2; }"
+  },
+  {
+    question: "What CSS property is used to control the spacing between lines of text?",
+    answer: "line-height"
+  },
+  {
+    question: "Complete the CSS to make an element semi-transparent:\nopacity: ____;",
+    answer: "opacity: 0.5;"
+  },
+  {
+    question: "Which CSS property is used to add rounded corners to an element?",
+    answer: "border-radius"
+  },
+  {
+    question: "Fill in the blank to make the text bold:\nfont-____: bold;",
+    answer: "font-weight: bold;"
+  },
+  {
+    question: "What CSS property is used to make text italic?",
+    answer: "font-style"
+  },
+  {
+    question: "Fill in the blank to center an element horizontally using Flexbox:\ndisplay: flex;\njustify-content: ____;",
+    answer: "display: flex;\njustify-content: center;"
+  },
+  {
+    question: "What CSS property controls the order of flex items within a flex container?",
+    answer: "order"
+  },
+  {
+    question: "Complete the CSS to select the first child of an element:\n____:first-child { }",
+    answer: "*:first-child { }"
+  },
+  {
+    question: "What CSS property is used to create a multi-column layout?",
+    answer: "column-count"
+  },
+  {
+    question: "What CSS property is used to add a shadow to text?",
+    answer: "text-shadow"
+  },
+  {
+    question: "Fill in the blank to position an element relative to its normal position:\nposition: ____;",
+    answer: "position: relative;"
+  },
+  {
+    question: "What CSS property is used to control the spacing between characters?",
+    answer: "letter-spacing"
+  },
+  {
+    question: "Complete the CSS to select all paragraphs that are direct children of a div:\ndiv > ____ { }",
+    answer: "div > p { }"
+  },
+  {
+    question: "What CSS property is used to change the cursor style when hovering over an element?",
+    answer: "cursor"
+  },
+  {
+    question: "What CSS property is used to add a drop shadow to an element?",
+    answer: "box-shadow"
+  },
+  {
+    question: "Fill in the blank to position an element relative to its nearest positioned ancestor:\nposition: ____;",
+    answer: "position: absolute;"
+  },
+  {
+    question: "What CSS property is used to control the spacing between words?",
+    answer: "word-spacing"
+  },
+  {
+    question: "Complete the CSS to select the last child of an element:\n____:last-child { }",
+    answer: "*:last-child { }"
+  },
+  {
+    question: "What CSS property is used to make an element fixed relative to the viewport?",
+    answer: "position: fixed;"
+  },
+  {
+    question: "What CSS property is used to control the stacking order of positioned elements?",
+    answer: "z-index"
+  },
+  {
+    question: "Fill in the blank to position an element so it scrolls with its nearest scrolling ancestor:\nposition: ____;",
+    answer: "position: sticky;"
+  },
+  {
+    question: "What CSS property is used to define the size of the font in em units?",
+    answer: "font-size"
+  },
+  {
+    question: "Complete the CSS to select an element and all its following siblings:\n____ ~ * { }",
+    answer: "h1 ~ * { }"
+  },
+  {
+    question: "What CSS property is used to define flexible lengths relative to the viewport's width?",
+    answer: "vw"
+  },
+  {
+    question: "What CSS property is used to define the transition between two states of an element?",
+    answer: "transition"
+  },
+  {
+    question: "Fill in the blank to position an element using coordinates relative to its containing element:\nposition: ____;",
+    answer: "position: absolute;"
+  },
+  {
+    question: "What CSS property is used to control how an element is positioned within a grid layout?",
+    answer: "grid-area"
+  },
+  {
+    question: "Complete the CSS to select the checked state of a checkbox input:\ninput[type=\"checkbox\"]:____ { }",
+    answer: "input[type=\"checkbox\"]:checked { }"
+  },
+  {
+    question: "What CSS property is used to define the initial size of a grid column?",
+    answer: "grid-template-columns"
+  },
+  {
+    question: "What CSS property is used to define a grid layout?",
+    answer: "display: grid"
+  },
+  {
+    question: "Fill in the blank to make an element's content unselectable:\nuser-select: ____;",
+    answer: "user-select: none;"
+  },
+  {
+    question: "What CSS property is used to define the alignment of grid items within a grid container?",
+    answer: "align-items"
+  },
+  {
+    question: "Complete the CSS to select the root element of the document:\n____ { }",
+    answer: ":root { }"
+  },
+  {
+    question: "What CSS property is used to define a shape for clipping an element?",
+    answer: "clip-path"
+  },
+    {
+        question: "What CSS property is used to define the flow and alignment of content within a flexbox container?",
+        answer: "flex-flow"
+    },
+    {
+        question: "Fill in the blank to set the position of a background image within its element:\nbackground-position: ____;",
+        answer: "background-position: center;"
+    },
+    {
+        question: "What CSS property is used to define the distribution of space between and around content items along the cross-axis of a flexbox layout?",
+        answer: "align-content"
+    },
+    {
+        question: "Complete the CSS to select an element if it is the only child of its parent:\n____:only-child { }",
+        answer: "*:only-child { }"
+    },
+    {
+        question: "What CSS property is used to define the shape used to outline the element?",
+        answer: "outline-shape"
+    },
+    {
+        question: "Complete the CSS property for `display: flex;` to wrap flex items:",
+        answer: "flex-wrap: wrap;"
+    },
+    {
+        question: "Complete the CSS property for `align-content` in flexbox (for multiple lines):",
+        answer: "align-content: space-around;"
+    },
+    {
+        question: "Complete the CSS property for `grid-gap` (deprecated, replaced by `gap`):",
+        answer: "grid-gap: 10px;"
+    },
+    {
+        question: "Complete the CSS property for `grid-template-rows`:",
+        answer: "grid-template-rows: auto auto;"
+    },
+    {
+        question: "Complete the CSS selector for the last child of a `ul` element:",
+        answer: "ul > li:last-child { }"
+    },
+    {
+        question: "Complete the CSS selector for the first child of a `div` element:",
+        answer: "div > :first-child { }"
+    }
   ],
   js: [
     {
@@ -483,7 +831,168 @@ const levels = {
   {
     question: "Complete the JavaScript to stop the propagation of an event:\nevent.____Propagation();",
     answer: "event.stopPropagation();"
-  }
+  },
+  {
+    question: "Complete this JavaScript code to select an element by its ID:\nconst element = document.____('myId');",
+    answer: "const element = document.getElementById('myId');"
+  },
+  {
+    question: "What JavaScript method is used to add a new element to the end of an array?",
+    answer: "push()"
+  },
+  {
+    question: "Fill in the blank to create a function in JavaScript:\n____ myFunction() { }",
+    answer: "function myFunction() { }"
+  },
+  {
+    question: "What JavaScript method is used to remove the first element from an array?",
+    answer: "shift()"
+  },
+  {
+    question: "Complete this JavaScript code to add an event listener:\nelement.addEventListener('click', ____);",
+    answer: "element.addEventListener('click', myFunction);  (where myFunction is a function)"
+  },
+  {
+    question: "Complete this JavaScript code to change the text content of an element:\nelement.textContent = ____;",
+    answer: "element.textContent = 'New Text';"
+  },
+  {
+    question: "What JavaScript method is used to find the index of an item in an array?",
+    answer: "indexOf()"
+  },
+  {
+    question: "Fill in the blank to create a JavaScript object:\nconst myObject = { key: 'value' };",
+    answer: "const myObject = { key: 'value' };"
+  },
+  {
+    question: "What JavaScript method is used to convert a JSON string to a JavaScript object?",
+    answer: "JSON.parse()"
+  },
+   {
+    question: "Complete this JavaScript code to get the value of an input field:\nconst value = document.getElementById('myInput').____;",
+    answer: "const value = document.getElementById('myInput').value;"
+  },
+  {
+    question: "Complete this JavaScript code to create a new HTML element:\nconst newElement = document.____('div');",
+    answer: "const newElement = document.createElement('div');"
+  },
+  {
+    question: "What JavaScript method is used to remove an element from the DOM?",
+    answer: "remove()"
+  },
+  {
+    question: "Fill in the blank to create a JavaScript class:\n____ MyClass {  }",
+    answer: "class MyClass {  }"
+  },
+  {
+    question: "What JavaScript method is used to execute a function after a specified delay?",
+    answer: "setTimeout()"
+  },
+  {
+    question: "Complete this JavaScript code to prevent the default action of an event:\nevent.____();",
+    answer: "event.preventDefault();"
+  },
+  {
+    question: "Complete this JavaScript code to add a class to an element:\nelement.classList.____('myClass');",
+    answer: "element.classList.add('myClass');"
+  },
+  {
+    question: "What JavaScript method is used to check if an array includes a certain value?",
+    answer: "includes()"
+  },
+  {
+    question: "Fill in the blank to create a JavaScript promise:\nconst myPromise = new ____((resolve, reject) => { });",
+    answer: "const myPromise = new Promise((resolve, reject) => { });"
+  },
+  {
+    question: "What JavaScript method is used to retrieve data from a server?",
+    answer: "fetch()"
+  },
+  {
+    question: "Complete this JavaScript code to redirect to a new page:\nwindow.location.____ = 'https://www.example.com';",
+    answer: "window.location.href = 'https://www.example.com';"
+  },
+  {
+    question: "Complete this JavaScript code to remove a class from an element:\nelement.classList.____('myClass');",
+    answer: "element.classList.remove('myClass');"
+  },
+  {
+    question: "What JavaScript method is used to create a shallow copy of an array?",
+    answer: "slice()"
+  },
+  {
+    question: "Fill in the blank to create an asynchronous function in JavaScript:\n____ asyncFunction() { }",
+    answer: "async asyncFunction() { }"
+  },
+  {
+    question: "What JavaScript method is used to set a cookie?",
+    answer: "document.cookie = 'cookieName=cookieValue';"
+  },
+  {
+    question: "Complete this JavaScript code to stop an event from propagating:\nevent.____();",
+    answer: "event.stopPropagation();"
+  },
+  {
+    question: "Complete this JavaScript code to get the current date and time:\nconst now = new ____();",
+    answer: "const now = new Date();"
+  },
+  {
+    question: "What JavaScript method is used to merge two or more arrays?",
+    answer: "concat()"
+  },
+  {
+    question: "Fill in the blank to create a generator function in JavaScript:\n____ function* myGenerator() { }",
+    answer: "function* myGenerator() { }"
+  },
+  {
+    question: "What JavaScript method is used to add an event listener that only fires once?",
+    answer: "element.addEventListener('click', myFunction, { once: true });"
+  },
+  {
+    question: "Complete this JavaScript code to decode a URI component:\nconst decoded = decodeURIComponent(____);",
+    answer: "const decoded = decodeURIComponent(encodedURI);"
+  },
+  {
+    question: "Complete this JavaScript code to create a new, empty object with no prototype:\nconst obj = Object.____(null);",
+    answer: "const obj = Object.create(null);"
+  },
+  {
+    question: "What JavaScript method is used to iterate over the properties of an object?",
+    answer: "for...in loop"
+  },
+  {
+    question: "Fill in the blank to create a new Symbol:\nconst mySymbol = ____ Symbol('mySymbol');",
+    answer: "const mySymbol = Symbol('mySymbol');"
+  },
+  {
+    question: "What JavaScript method is used to get the prototype of an object?",
+    answer: "Object.getPrototypeOf()"
+  },
+  {
+    question: "Complete this JavaScript code to define a getter method in a class:\nget ____() {  }",
+    answer: "get myProperty() {  }"
+  },
+  {
+        question: "Complete this JavaScript code to create a new error object:\nconst error = new ____('Something went wrong!');",
+        answer: "const error = new Error('Something went wrong!');"
+    },
+    {
+        question: "What JavaScript method is used to remove the last element from an array and returns that element?",
+        answer: "pop()"
+    },
+    {
+        question: "Fill in the blank to create a weak map in JavaScript:\nconst weakMap = new ____();",
+        answer: "const weakMap = new WeakMap();"
+    },
+    {
+        question: "What JavaScript method is used to check if a key exists in a WeakMap object?",
+        answer: "weakMap.has(key)"
+    },
+    {
+        question: "Complete this JavaScript code to define a setter method in a class:\nset ____(value) {  }",
+        answer: "set myProperty(value) {  }"
+    },
+
   ]
 };
 
@@ -587,3 +1096,6 @@ window.onload = function() {
     });
   });
 };
+
+
+document.getElementById('year').textContent = new Date().getFullYear();

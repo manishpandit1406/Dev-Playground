@@ -33,11 +33,34 @@
     font-weight: bold;
     margin-left:50px ;
   }
+  .logo-editor {
+    font-size: 24px;
+    font-weight: bold;
+  }
   
   nav a {
     margin-left: 20px;
     font-size: 16px;
   }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffd5;
+    margin-left: 50px;
+  }
+  
+  .logo-img {
+    width: 32px;
+    height: 32px;
+    margin-top: auto;
+    object-fit: contain;
+    border-radius: 6px; /* optional for soft edges */
+  }
+  
   
   main {
     padding: 20px;
@@ -68,6 +91,7 @@
     flex-direction: column;
     animation: fadeInUp 0.8s ease-in;
   }
+  
   
   
   textarea {
@@ -153,16 +177,89 @@
   .space {
     padding: 171px;
   }
-  
-  footer {
-    margin-top: auto;
-    background: #1a1a1a;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    color: #888;
-    border-top: 1px solid #333;
-  }
+
+
+    /* footer style */
+    .footer {
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px 10px;
+      font-family: 'Segoe UI', sans-serif;
+      border-top: 2px solid #00ffd5;
+    }
+    
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .footer-section h2 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-section ul li {
+      margin: 8px 0;
+    }
+    
+    .footer-section ul li a {
+      text-decoration: none;
+      color: #ccc;
+      transition: 0.3s;
+    }
+    
+    .footer-section ul li a:hover {
+      color: #fff;
+    }
+    
+    .footer .socials a {
+      color: #ccc;
+      margin-right: 12px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    
+    .footer .socials a:hover {
+      color: #1da1f2;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      padding-top: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    .footer-logo img {
+      width: 170px;         /* or use % for responsiveness */
+      height: auto;
+      margin-top: 0px;
+      border-radius: 8px;   /* optional: rounded edges */
+      border: 1px solid #333;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .footer-logo img:hover {
+      transform: scale(1.05);
+    }
+
   
   /* Animations */
   @keyframes fadeIn {

@@ -1,168 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Guidance - How to Use</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevPlayground - User Guide</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="logo-removebg.png" type="image/x-icon">
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      line-height: 1.6;
     }
-
-    a {
-    color: #00ffd5;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  a:hover {
-    color: #00bfa5;
-  }
-  
-  .navbar {
-    background-color: #1f1f1f;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #00ffd5;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  nav a {
-    margin-left: 20px;
-    font-size: 16px;
-  }
-  
-    
-  footer {
-    margin-top: auto;
-    background: #1a1a1a;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    color: #888;
-    border-top: 1px solid #333;
-  }
-
-    h1, h2, h3 {
-      color: #00bcd4;
-      text-transform: uppercase;
+    h1, h2 {
+      color: #00ffd5;
+      margin-top: 2.5rem;
     }
-    #guide-header {
-      padding: 20px;
-      text-align: center;
-    }
-
     .container {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #00000088;
+      margin: auto;
     }
-
-    .step {
-      margin-bottom: 30px;
+    .section {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 76, 41, 0.1);
     }
-
-    .step h2 {
-      margin-bottom: 10px;
+    ul {
+      padding-left: 1.5rem;
     }
-
-    .step p {
-      line-height: 1.7;
-    }
-
-    code {
-      background-color: #292929;
-      padding: 4px 8px;
-      border-radius: 4px;
-      color: #ffeb3b;
-    }
-
     a {
-      color: #03a9f4;
+      color: #00ffd5;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    /* footer style */
+    .footer {
+  background: #111;
+  color: #ccc;
+  padding: 40px 20px 10px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 2px solid #00ffd5;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer .socials a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer .socials a:hover {
+  color: #1da1f2;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-logo img {
+  width: 170px;         /* or use % for responsiveness */
+  height: auto;
+  margin-top: 0px;
+  border-radius: 8px;   /* optional: rounded edges */
+  border: 1px solid #333;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
-  <header class="navbar">
 
-    <div class="logo">🧠 Code Canva</div>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo-removebg.png" alt="Logo" class="logo-img">
+      <span>DevPlayground</span>
+    </div>
     <nav>
       <a href="index.html">Home</a>
+      <a href="code-canva.html">Code Canva</a>
+      <a href="game.html">Code Adventure</a>
+      <a href="#">Learn Code</a>
       <a href="projects.html">View Saved Projects</a>
-      <a href="guidence.html">Guide</a>
-      <a href="#">About</a>
+      <a href="guidence.html" target="_blank">User Guide</a>
     </nav>
   </header>
-<div id="guide-header">
-    <h1>Project Editor Guide</h1>
-    <p>Learn how to create, save, and preview your projects</p>
-</div>
+  
+
   <div class="container">
-    <div class="step">
-      <h2>1. Write Your Code</h2>
-      <p>
-        Use the provided code editors labeled <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code> to write your project code.
-        Click the buttons like <strong>HTML</strong>, <strong>CSS</strong>, or <strong>JS</strong> to switch between editors.
-      </p>
+    <h1>Welcome to Code Canva – User Guide</h1>
+
+    <div class="section">
+      <h2>🎯 What is Code Canva?</h2>
+      <p>Code Canva is an interactive platform for learning HTML, CSS, and JavaScript by typing code directly into a beautiful canvas. You’ll see real-time output as you write code, helping you understand how each line works instantly.</p>
     </div>
 
-    <div class="step">
-      <h2>2. Live Preview</h2>
-      <p>
-        The code runs automatically in the preview pane. Just start typing and you'll see the result instantly!
-      </p>
+    <div class="section">
+      <h2>🛠️ How to Use It</h2>
+      <ul>
+        <li><strong>Step 1:</strong> Click on the respective tab – <em>HTML</em>, <em>CSS</em>, or <em>JavaScript</em>.</li>
+        <li><strong>Step 2:</strong> Type or paste your code into the editor area.</li>
+        <li><strong>Step 3:</strong> The output is automatically updated in the preview window below.</li>
+        <li><strong>Step 4:</strong> You can copy your code using the <strong>Copy</strong> button provided.</li>
+        <li><strong>Step 5:</strong> Use it to experiment, learn, or quickly prototype your ideas!</li>
+      </ul>
     </div>
 
-    <div class="step">
-      <h2>3. Save Your Project</h2>
-      <p>
-        Click the <strong>Save</strong> button and enter a project name. It will store the project in your browser's local storage so you can view it later.
-      </p>
+    <div class="section">
+      <h2>💡 Features</h2>
+      <ul>
+        <li>✨ Live preview of HTML, CSS & JS.</li>
+        <li>🖋 Clean UI with dark theme for reduced eye strain.</li>
+        <li>📋 Copy code with one click.</li>
+        <li>📱 Responsive design – works great on desktop & mobile.</li>
+      </ul>
     </div>
 
-    <div class="step">
-      <h2>4. View Saved Projects</h2>
-      <p>
-        Navigate to the <a href="projects.html">Projects</a> page. You’ll see all your saved projects with options to <strong>Preview</strong>, <strong>Show Code</strong>, <strong>Download ZIP</strong>, or <strong>Delete</strong> them.
-      </p>
+    <div class="section">
+      <h2>📎 Tips & Tricks</h2>
+      <ul>
+        <li>Use HTML to structure your page – <em>head</em>, <em>body</em>, <em>div</em>, etc.</li><li>Use CSS to style your page – <em>color</em>, <em>font</em>, <em>margin</em>, etc .</li>
+        <li>Apply CSS styles like colors, margins, and fonts in the CSS tab.</li>
+        <li>Write interactivity in JavaScript – try `alert("Hello!")` or `console.log()`!</li>
+        <li>Refresh to reset everything.</li>
+      </ul>
     </div>
 
-    <div class="step">
-      <h2>5. Download as ZIP</h2>
-      <p>
-        Click the <strong>Download ZIP</strong> button to download your project files (<code>index.html</code>, <code>style.css</code>, <code>script.js</code>) in a .zip archive.
-      </p>
+    <div class="section">
+      <h2>🔗 Useful Links</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Docs</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Docs</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JS Docs</a></li>
+      </ul>
     </div>
 
-    <div class="step">
-      <h2>6. Deleting Projects</h2>
-      <p>
-        Use the <strong>Delete</strong> button in the project list to remove a saved project from your local storage.
-      </p>
+    <div class="section">
+      <h2>🙌 Happy Coding!</h2>
+      <p>Keep exploring, keep learning, and enjoy building with <strong>Code Canva</strong>! Made with ❤️ by <strong>Manish Pandit</strong>.</p>
     </div>
+
+    <div class="container">
+      <h1>🎮 Game Mode – Guide & Instructions</h1>
+      <div class="section">
+        <p>Welcome to <strong>Code Canva Game Mode</strong> – an interactive way to master HTML, CSS, and JavaScript with real-time challenges!</p>
+      </div>
+    
+      <div class="section">
+        <h2>🕹️ How to Play</h2>
+        <ul>
+          <li><strong>Step 1:</strong> Read the code challenge or instruction displayed above the input box.</li>
+          <li><strong>Step 2:</strong> Type the correct code in the editor field below it.</li>
+          <li><strong>Step 3:</strong> If your input matches the correct answer exactly, the game automatically advances to the next level.</li>
+          <li><strong>Step 4:</strong> Repeat and improve your accuracy!</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>🧠 Features</h2>
+        <ul>
+          <li>✅ Real-time validation of typed code</li>
+          <li>⚡ Instant transition to the next challenge</li>
+          <li>🌟 Great for memorizing HTML/CSS/JS basics</li>
+          <li>📱 Responsive and optimized for all devices</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>💡 Tips</h2>
+        <ul>
+          <li>Code must match the required output exactly – spacing, tags, and punctuation matter.</li>
+          <li>Use this mode to reinforce core concepts through repetition.</li>
+          <li>Try completing all levels without errors for better retention.</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>📎 Coming Soon</h2>
+        <ul>
+          <li>🎯 Timed coding mode</li>
+          <li>🏆 Score tracking and streaks</li>
+          <li>📊 Leaderboard and shareable achievements</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>🙌 Enjoy Learning!</h2>
+        <p>Game Mode is designed to make coding practice engaging and efficient. Built with ❤️ by <strong>Manish Pandit</strong>. Keep practicing and stay sharp!</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>📁 Projects Page – Guide & Instructions</h1>
+      <div class="section">
+        <p>The <strong>Projects Page</strong> on Code Canva is where you can test, view, and interact with your saved or demo code snippets using HTML, CSS, and JavaScript.</p>
+      </div>
+    
+      <div class="section">
+        <h2>🛠️ How to Use This Page</h2>
+        <ul>
+          <li><strong>Step 1:</strong> Scroll through the listed projects or templates shown on the page.</li>
+          <li><strong>Step 2:</strong> Click on any <strong>project title</strong> or button to open and test it live in a sandbox-like environment.</li>
+          <li><strong>Step 3:</strong> Experiment with the structure, style, and scripts inside the interactive editor.</li>
+          <li><strong>Step 4:</strong> Some templates are editable, so feel free to modify them and preview changes.</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>📌 Purpose of Projects Page</h2>
+        <ul>
+          <li>🔍 View working examples of HTML/CSS/JS components.</li>
+          <li>🧪 Use as templates for practicing or building your own versions.</li>
+          <li>📚 Learn by reading and tweaking well-structured code samples.</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>💡 Tips</h2>
+        <ul>
+          <li>Start with simple projects to understand layout and structure.</li>
+          <li>Compare CSS styling and HTML tags to see how they work together.</li>
+          <li>Use browser developer tools for deeper inspection and learning.</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>🚧 Coming Soon</h2>
+        <ul>
+          <li>📝 Save your custom projects locally or to your GitHub.</li>
+          <li>🎨 Visual project gallery with live previews.</li>
+          <li>🔄 Fork and remix code templates.</li>
+        </ul>
+      </div>
+    
+      <div class="section">
+        <h2>🙌 Learn. Build. Repeat.</h2>
+        <p>Use this space to experiment with real code and see it in action. Designed for learners like you by <strong>Manish Pandit</strong>. More templates coming soon!</p>
+      </div>
+    </div>
+    
+    
   </div>
 
-  <footer>
-    <p>&copy; 2025 Code Canva. Built with ❤️ by Manish</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>DevPlayground</h2>
+        <div class="footer-logo">
+          <img src="logo-removebg.png" alt="EduFreelance Logo">
+        </div>
+      </div>
+  
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="code-canva.html">Code Canva</a></li>
+          <li><a href="#">Learn Code</a></li>
+          <li><a href="projects.html">Saved Projects</a></li>
+          <li><a href="game.html">Code Adventure</a></li>
+          <li><a href="guidence.html">User Guide</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section contact">
+        <h2>Contact</h2>
+        <p>Email: info@DevPlayground.com</p>
+        <p>Phone: +91 997****022</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> DevPlayground. All rights reserved.</p>
+    </div>
   </footer>
-
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
